@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:jsp="http://java.sun.com/xml/ns/javaee/jsp" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee" version="3.0">
+  
+  <servlet>
+    <servlet-name>ServletAdherent</servlet-name>
+    <servlet-class>bibliotheque.servlet.ServletAdherent</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletAdherent</servlet-name>
+    <url-pattern>/adherent</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>ServletAuteur</servlet-name>
+    <servlet-class>bibliotheque.servlet.ServletAuteur</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletAuteur</servlet-name>
+    <url-pattern>/auteurLivre</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>ServletLivre</servlet-name>
+    <servlet-class>bibliotheque.servlet.ServletLivre</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletLivre</servlet-name>
+    <url-pattern>/livres</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>ServletPret</servlet-name>
+    <servlet-class>bibliotheque.servlet.ServletPret</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletPret</servlet-name>
+    <url-pattern>/pretLivre</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>ServletRetour</servlet-name>
+    <servlet-class>bibliotheque.servlet.ServletRetour</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletRetour</servlet-name>
+    <url-pattern>/retourLivre</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>ServletType</servlet-name>
+    <servlet-class>bibliotheque.servlet.ServletType</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletType</servlet-name>
+    <url-pattern>/typeLivre</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>ServletIndex</servlet-name>
+    <servlet-class>bibliotheque.servlet.ServletIndex</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletIndex</servlet-name>
+    <url-pattern>/index</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>ServletUtilisateur</servlet-name>
+    <servlet-class>bibliotheque.servlet.ServletUtilisateur</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletUtilisateur</servlet-name>
+    <url-pattern>/utilisateur</url-pattern>
+  </servlet-mapping>
+  
+  <jsp-config>
+    <jsp-property-group>
+      <url-pattern>*.jsp</url-pattern>
+      <include-prelude>/WEB-INF/taglibs.jsp</include-prelude>
+    </jsp-property-group>
+  </jsp-config>
+</web-app>
