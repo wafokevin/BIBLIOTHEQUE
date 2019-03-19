@@ -86,7 +86,7 @@ public class UtilisateurDaoImpl implements UtilisateurDao {
 			try {
 				if(connexion != null) {
 					connexion.rollback();
-				}
+				} 
 			}catch(SQLException e2) {
 			}	
 		   throw new DaoException("Impossible de communiquer avec la BD a1");

@@ -74,6 +74,7 @@
 	
 .fixed_header tbody tr:hover { 
 	 background: #303F50;
+	 cursor: pointer;
   
 } 
 
@@ -206,4 +207,5 @@
 	background:url('images/bouton2.PNG') no-repeat;
 }
 
-
+ tr{ transition: all .25s ease-in-out}
+    .selected{background-color: #303F50; font-weight: bold; color: #FFFFFF;}

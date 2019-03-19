@@ -1,4 +1,5 @@
 
+	
 </head>
 <body>
 <div id="art-main">
@@ -58,14 +59,14 @@
 						  </thead>
 						  <tbody>
 						  	   <c:forEach var="utilisateur" items="${utilisateurs}">
-						  	  	<tr> 
+						  	  	<tr>						  	  	
 									<td><c:out value="${utilisateur.login}"/></td>
 									<td><c:out value="${utilisateur.groupe}"/></td>
 									<td>oui</td>
-								</tr>
+								</tr>							
 								</c:forEach>
 		 				 </tbody>
-					   </table>
+				</table>
       			       <div class="formul">                    	
 	      					<h3 class="ta">Gestion utilisateur </h3>	      					  
 								  <form action="ServletUtilisateur" method="post">
@@ -87,9 +88,9 @@
 								  <form action="ServletIndex" method="post">
 								  	<fieldset class="form-ajout-util" style="margin-top:10px">
 								  		<legend>Formulaire de modification des utilisateurs</legend>
-								  		<label class="form-text">Login : <input type="text" name="loginModif" style="width:80%; font-size: 13px; font-weight:bold;padding-left:8px;color:#000000"> </label>								  		
+								  		<label class="form-text">Login : <input type="text" name="loginModif" id="loginModif" style="width:80%; font-size: 13px; font-weight:bold;padding-left:8px;color:#000000"> </label>								  		
 								  		<label for="style-select" class="selec-droit">
-								  		<select name="groupeUtilModif" id="style-select">
+								  		<select name="groupeUtilModif" id="groupeUtilModif">
 								  			<option value="">Changer le role</option>
 								  			<option value="ADMIN">ADMIN</option>
 								  			<option value="USER">USER</option>
@@ -117,6 +118,41 @@
         <span id="art-footnote-links"><a href="http://www.artisteer.com/" target="_blank">Web Template</a> created with Artisteer.</span>
     </p>
 </div>
+
+<script type="text/javascript">
+
+		var index,
+		table = document.getElementById("table");
+		
+		// display selected row data into input text
+		function selectedRowToInput()
+		{		 	
+		    for(var i = 1; i < table.rows.length; i++)
+		    {
+		        table.rows[i].onclick = function()
+		        {
+		          // get the seected row index
+		          rIndex = this.rowIndex;
+		          document.getElementById("loginModif").value = this.cells[0].innerHTML;
+		          document.getElementById("groupeUtilModif").value = this.cells[1].innerHTML;	
+
+			        // remove the background from the previous selected row
+			        if(typeof index !== "undefined"){
+			          table.rows[index].classList.toggle("selected");
+			        }
+			        console.log(typeof index);
+			        // get the selected row index
+			        index = this.rowIndex;
+			        // add class selected to the row
+			        this.classList.toggle("selected");
+			        console.log(typeof index);
+		        };
+		    }
+		}		
+		
+		selectedRowToInput();
+	
+</script>
 
 
 </body></html>
